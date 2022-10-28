@@ -1,0 +1,7 @@
+{
+  "name": "safe_map",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
