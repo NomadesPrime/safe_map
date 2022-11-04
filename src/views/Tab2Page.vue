@@ -1,29 +1,48 @@
 <template>
-  <ion-page>
+    <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Tab 2</ion-title>
+        <ion-title>Nome</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Tab 2</ion-title>
+          <ion-title size="large">Nome</ion-title>
+
         </ion-toolbar>
       </ion-header>
-
-      <ExploreContainer name="Tab 2 page" />
+      <ion-nav-link router-direction="forward" :component="component">
+            <ion-button class="button" href="/tabs/tab3">Go to Page Two</ion-button>
+          </ion-nav-link>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonNavLink, 
+  IonButton,
+} from "@ionic/vue";
+import Tab3Page from "./Tab3Page.vue";
 
-export default defineComponent({
-  name: 'Tab2Page',
-  components: { ExploreContainer, IonHeader, IonToolbar, IonTitle, IonContent, IonPage }
-});
+export default {
+  components: { IonHeader, IonToolbar, IonTitle, IonContent, IonNavLink, IonButton, IonPage},
+  data() {
+    return {
+      component: Tab3Page,
+    };
+  },
+};
 </script>
+<style>
+.button{
+  height: 100px;
+  width: 100%;
+}
+</style>
